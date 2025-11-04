@@ -1,5 +1,6 @@
 "use client"
 
+import React from "react"
 import { Trash2 } from "lucide-react"
 import Image from "next/image"
 import { useState, useEffect } from "react"
@@ -37,17 +38,17 @@ export function CartPage() {
     fetchCart()
   }, [])
 
-  const removeItem = (id: number) => {
-    setItems(items.filter((item) => item.id !== id))
-  }
-
   const updateQuantity = (id: number, quantity: number) => {
-    if (quantity <= 0) {
-      removeItem(id)
-    } else {
-      setItems(items.map((item) => (item.id === id ? { ...item, quantity } : item)))
-    }
-  }
+    setItems((currentItems) => {
+      if (quantity <= 0) {
+        return currentItems.filter((item) => item.id !== id);
+      } else {
+        return currentItems.map((item) =>
+          item.id === id ? { ...item, quantity } : item
+        );
+      }
+    });
+  };
 
   const totalPrice = items.reduce((sum, item) => sum + item.price * item.quantity, 0)
 
@@ -104,7 +105,7 @@ export function CartPage() {
 
               <div className="flex flex-col items-end justify-between gap-3">
                 <button
-                  onClick={() => removeItem(item.id)}
+                  onClick={() => updateQuantity(item.id, 0)}
                   className="text-gray-400 hover:text-red-500 transition-colors"
                 >
                   <Trash2 size={20} />
