@@ -1,36 +1,77 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# ZVZO UX 개선
 
-## Getting Started
+## 프로젝트 정보
 
-First, run the development server:
+**개발 과정**
+- UX 분석 및 개선안 도출: 1시간
+- v0를 활용한 UI 구성: 30분
+- **총 소요 시간: 1시간 30분**
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+**구현 범위**
+- 실데이터 연동은 제외, UI/UX 개선에 집중
+- 목 데이터는 API Route로 제공하여 향후 서버 연동 시 용이하게 설계
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+**의의**
+- ZVZO의 핵심 가치인 "빠른 실험과 검증"을 직접 실천
+- 제한된 시간 내 분석-설계-구현의 전 과정 수행
+- 실무 투입 시 즉시 기여 가능한 실행력 증명
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## 비교 대상 분석
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+### 경쟁사 웹 전략 유형
+| 서비스 | 전략 | 특징 |
+|--------|------|------|
+| 무신사, 당근마켓, 크림 | PC 최적화 | 넓은 레이아웃 활용, 모바일과 차별화된 UI |
+| 에이블리, 지그재그 | 모바일 미러링 | 앱의 핵심 기능을 웹에서도 제공 |
+| 토스, 토스뱅크 | 랜딩페이지 | 앱 다운로드 유도 중심, 정보성 콘텐츠 제공 |
 
-## Learn More
+### ZVZO 현재 상황
+- **전략 방향**: 에이블리/지그재그 유형 (모바일 미러링 지향)
+- **현재 수준**: 기본 쇼핑 기능 중심의 최소 구성
+- **추정 배경**: 
+  - 빠른 성장 단계에서 모바일 앱 우선 집중 (합리적 선택)
+  - 제한된 프론트엔드 리소스로 웹 기능 최소화
+  - PMF 검증 후 점진적 확장 단계로 판단
 
-To learn more about Next.js, take a look at the following resources:
+---
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## 개선점
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+### 1. GNB 상시 제공
+**현황**
+- 꿀템찾기 화면에서만 GNB 노출
+- 장바구니, 마이페이지 등에서 주요 화면 재진입 경로 부재
+- 의도적 단순화로 보이나, 페이지 간 이동 시 사용자 이탈 가능성 존재
 
-## Deploy on Vercel
+**개선안**
+- 모든 페이지에서 GNB 고정 제공
+- 모바일 앱과 일관된 네비게이션 구조 유지
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+**기대 효과**
+- 페이지 간 이동 마찰 감소
+- 웹 사용자 체류 시간 및 탐색 깊이 증가
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+### 2. 마이페이지 기능 확장
+**현황**
+- 주문내역만 제공 (1개 메뉴)
+- 에이블리, 지그재그 메뉴 대비 편의성 상대적 낮음
+
+**개선안**
+- 주문내역 외 추가 기능 제공
+- 단계적 확장을 고려한 메뉴 구조 설계
+
+**기대 효과**
+- 웹 사용자 편의성 향상
+
+### 3. 앱 전환 유도 장치 추가
+**현황**
+- 웹에서 앱으로 전환을 유도하는 UI 요소 없음
+- 앱 중심 성장 전략으로 추정되나, 웹-앱 시너지 기회 미활용
+
+**개선안**
+- 꿀템찾기 페이지 상단에 플로팅 버튼 배치
+- iOS/Android 스토어 링크 및 딥링크 연동
+
+**기대 효과**
+- 웹 유입 사용자의 앱 전환율 확보
+- 크로스 플랫폼 MAU 증가 및 유저 여정 최적화
