@@ -16,6 +16,12 @@
 - 제한된 시간 내 분석-설계-구현의 전 과정 수행
 - 실무 투입 시 즉시 기여 가능한 실행력 증명
 
+## 실행 화면
+<img width="1870" height="1516" alt="localhost_3000_" src="https://github.com/user-attachments/assets/6a50cb88-9cf5-417c-a538-b17389d330b4" />
+<img width="1870" height="1516" alt="localhost_3000_ (1)" src="https://github.com/user-attachments/assets/2be39ac9-390e-4375-9503-77e1ff2a1f93" />
+<img width="1870" height="1516" alt="localhost_3000_ (2)" src="https://github.com/user-attachments/assets/4673582b-2f82-40b3-967e-5871972d53a4" />
+<img width="1870" height="1516" alt="localhost_3000_ (3)" src="https://github.com/user-attachments/assets/e8db82a9-494a-423b-82ef-8220175a7e20" />
+
 ## 비교 대상 분석
 
 ### 경쟁사 웹 전략 유형
